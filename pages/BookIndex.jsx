@@ -12,7 +12,6 @@ export function BookIndex() {
     const [selectedBookId, setSelectedBookId] = useState(null)
 
     useEffect(() => {
-        console.log('mount')
         bookService.query(filterBy)
             .then(setBooks)
     }, [filterBy])

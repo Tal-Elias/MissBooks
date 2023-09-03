@@ -1,0 +1,29 @@
+.book-filter {
+    background-color: var(--clr2bg);
+    padding: 1em;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.book-filter h2 {
+    margin-block-end: 1em;
+}
+
+.book-filter form {
+    display: grid;
+    grid-template-columns: 100px 200px;
+}
+
+.book-filter input {
+    margin-block-end: 1em;
+}
+
+.book-filter button {
+    color: var(--clr2bg);
+    background-color: var(--clr2);
+}
+
+.book-filter button:hover {
+    color: white;
+    transition: .3s;
+}
