@@ -10,6 +10,9 @@ export const bookService = {
   remove,
   save,
   getEmptyBook,
+  addReview,
+  deleteReview,
+  getEmptyReview,
   getDefaultFilter,
 }
 
@@ -60,10 +63,37 @@ function getEmptyBook() {
     "thumbnail": "20.jpg",
     "language": "en",
     "listPrice": {
-      "amount": 50,
+      "amount": 0,
       "currencyCode": "EUR",
       "isOnSale": false
     }
+  }
+}
+
+function addReview(bookId, review) {
+  review = { ...review }
+  review.id = utilService.makeId()
+  return get(bookId)
+    .then(book => {
+      if (book.reviews) book.reviews.push(review)
+      else book.reviews = [review]
+      return book
+    })
+    .then(book => storageService.put(BOOK_KEY, book))
+}
+
+function deleteReview(bookId, reviewId) {
+  return get(bookId).then(book => {
+    book.reviews = book.reviews.filter(review => review.id !== reviewId)
+    return storageService.put(BOOK_KEY, book)
+  })
+}
+
+function getEmptyReview() {
+  return {
+    fullname: '',
+    rating: '',
+    readAt: '',
   }
 }
 

@@ -11,12 +11,13 @@ export function LongTxt({ txt, length = 100 }) {
 
     return (
         <div>
-            <p>{displayText}</p>
-            {txt.length > length && (
-                <button onClick={toggleExpansion}>
-                    {isExpanded ? 'Read Less' : 'Read More'}
-                </button>
-            )}
+            <p>{displayText}
+                {txt.length > length && (
+                    <button onClick={toggleExpansion}>
+                        {isExpanded ? 'Read Less' : 'Read More'}
+                    </button>
+                )}
+            </p>
         </div>
     )
 }
