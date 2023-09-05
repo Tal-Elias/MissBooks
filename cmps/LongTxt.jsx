@@ -11,7 +11,7 @@ export function LongTxt({ txt, length = 100 }) {
 
     return (
         <div>
-            <p>{displayText}
+            <p className="desc-p">{displayText}
                 {txt.length > length && (
                     <button onClick={toggleExpansion}>
                         {isExpanded ? 'Read Less' : 'Read More'}

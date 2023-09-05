@@ -14,3 +14,8 @@
     border-radius: 5px;
     background-color: var(--clr1bg);
 }
+
+.book-list section {
+    display: flex;
+    flex-direction: column;
+}

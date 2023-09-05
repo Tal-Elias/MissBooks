@@ -76,18 +76,18 @@ export function BookDetails() {
         <section className="book-details">
             <h1>{book.title}</h1>
             <h2>{book.subtitle}</h2>
-            <h2>Authors: {book.authors.join(', ')}</h2>
+            <h3>Authors: {book.authors.join(', ')}</h3>
             <h3>
                 Published: {book.publishedDate}
                 {setBookAge(book.publishedDate)}
             </h3>
-            <h1>Description:</h1>
+            <h3>Description:</h3>
             {<LongTxt txt={book.description} length={100} />}
             <h3>
                 Page Count: {book.pageCount}
                 {setReadingLevel(book.pageCount)}
             </h3>
-            <h1>Categories: {book.categories.join(', ')}</h1>
+            <h3>Categories: {book.categories.join(', ')}</h3>
             <img src={`assets/img/${book.thumbnail}`} alt="" />
             <h3>Language: {book.language}</h3>
             <h2 className={setBookPriceRange(book.listPrice.amount)}>
@@ -101,6 +101,10 @@ export function BookDetails() {
                     <ReviewList reviews={book.reviews} onDeleteReview={onDeleteReview} />)) || 'No Reviews'}
             </section>
             <button onClick={onBack}>Back</button>
+            <div>
+                <button><Link to={`/book/${book.prevBookId}`}>Previous Book</Link></button>
+                <button><Link to={`/book/${book.nextBookId}`}>Next Book</Link></button>
+            </div>
         </section>
     )
 }
