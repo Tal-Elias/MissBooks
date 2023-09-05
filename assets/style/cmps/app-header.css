@@ -4,9 +4,15 @@
   padding: 1em 0;
 }
 
-.app-nav {
+.app-header .app-nav {
   display: flex;
   gap: 15px;
+}
+
+.app-header a.active {
+  color: var(--clr2bg-light);
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 

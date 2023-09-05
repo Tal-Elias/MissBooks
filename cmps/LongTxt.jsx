@@ -7,7 +7,7 @@ export function LongTxt({ txt, length = 100 }) {
         setIsExpanded(!isExpanded)
     }
 
-    const displayText = isExpanded ? txt : txt.slice(0, length)
+    const displayText = isExpanded ? txt : txt.slice(0, length) + '...'
 
     return (
         <div>
